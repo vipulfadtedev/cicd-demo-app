@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: area51-ingress
+  namespace: area51
+spec:
+  rules:
+    - host: piclm.vortex.net
+      http:
+        paths:
+          - path: /greeting
+            backend:
+              serviceName: cicd-demo-app-svc
+              servicePort: 8080
